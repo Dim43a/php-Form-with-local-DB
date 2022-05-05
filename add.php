@@ -50,14 +50,15 @@ $first_name = normalize_word(mysqli_real_escape_string($link, $_REQUEST['first_n
 $last_name = normalize_word(mysqli_real_escape_string($link, $_REQUEST['last_name']));
 $personal_id = mysqli_real_escape_string($link, $_REQUEST['personal_id']);
 $grade = mysqli_real_escape_string($link, $_REQUEST['grade']);
-$email = mysqli_real_escape_string($link, $_REQUEST['email']);
+$email = strtolower(mysqli_real_escape_string($link, $_REQUEST['email']));
 $message = mysqli_real_escape_string($link, $_REQUEST['message']);
 
 $sql = "INSERT INTO students (first_name, last_name, personal_id, grade, email, message) VALUES ('$first_name', '$last_name', '$personal_id', '$grade', '$email', '$message')";
-if(mysqli_query($link, $sql)){
-    echo "<h2>Records added successfully.</h2>";
-} else{
-    echo "<h2>ERROR: Could not able to execute $sql. </h2>" . mysqli_error($link);
+try {
+    mysqli_query($link, $sql);
+    echo "<h2>$first_name $last_name was successful added to Data Base!</h2>";
+} catch (Exception $e) {
+    echo "<h2>ERROR: Could not able to execute $sql<br>" . mysqli_error($link)."</h2>";
 }
 echo "</div>";
 

@@ -22,7 +22,7 @@ if($result = mysqli_query($link, $sql)){
     if(mysqli_num_rows($result) > 0){
 
         echo "<h2>Records In DB</h2>";
-        echo "<table style='width:100%; border:1px solid black;'>";
+        echo "<table border='1' style='width:100%'>";
         echo "<tr>";
         echo "<th>First Name</th>";
         echo "<th>Last Name</th>";
