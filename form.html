@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-<div class="main-component ">
+<div class="main-component">
   <form class="form-component" action="add.php" method="post" id="form" >
     <h2>Fill the Form</h2>
     <ul class="list-without-bullet">
@@ -14,14 +14,17 @@
         <label for="first_name"></label>
         <input class="input-component" type="text" required name="first_name" id="first_name" placeholder="Name">
       </li>
+
       <li>
         <label for="last_name"></label>
         <input class="input-component" type="text" required name="last_name" id="last_name" placeholder="Second Name">
       </li>
+
       <li>
         <label for="personal_id"></label>
         <input class="input-component" type="number" required name="personal_id" id="personal_id" placeholder="Personal ID">
       </li>
+
       <li class="radio-component">Grade:
         <label>1
           <input type="radio" checked name="grade" value="1">
@@ -32,25 +35,37 @@
         <label>3
           <input type="radio" name="grade" value="3">
         </label>
+        <label>4
+          <input type="radio" name="grade" value="4">
+        </label>
       </li>
+
       <li>
         <label for="email"></label>
         <input class="input-component" type="text" required name="email" id="email" placeholder="E-mail">
       </li>
+
       <li>
         <label for="message"></label>
         <textarea class="input-component" rows="4" cols="20" name="message" form="form" id="message" placeholder="Some text..."></textarea>
       </li>
+
     </ul>
+
       <input class="join-btn" type="submit" value="Submit">
+
       <input class="reset-bnt" type="reset" value="Reset">
+
   </form>
+
   <form action="view.php" class="form-component">
     <input class="down-btn" type="submit" value="Show records">
   </form>
+
   <form action="del.php" class="form-component">
     <input class="down-btn" type="submit" value="Delete Data">
   </form>
+
 </div>
 </body>
 </html>

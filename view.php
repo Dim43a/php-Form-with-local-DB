@@ -44,7 +44,7 @@ if($result = mysqli_query($link, $sql)){
         echo "</table>";
         // Free result set
         mysqli_free_result($result);
-    } else{
+    } else {
         echo "<h2>No records matching your query were found.</h2>";
     }
 } else{
@@ -55,4 +55,3 @@ echo "</div>";
 
 // Close connection
 mysqli_close($link);
-
